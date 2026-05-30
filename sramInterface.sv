@@ -4,6 +4,7 @@ module sramInterface (
 	input wire clk,
 	input wire rst_n,
 	
+	// Pins going to the SDRAM chip
 	output logic [12:0] sd_address,
 	output logic [1:0] sd_bank,
 	inout logic [15:0] sd_data_inout,
@@ -14,6 +15,7 @@ module sramInterface (
 	output logic [1:0] sd_dqm,
 	output logic sd_cke,
 
+	// Control logic from the processor/bus/whatever you hook this up to!
 	input logic [15:0] din,
 	output logic [15:0] dout,
 	input logic [23:0] addr,

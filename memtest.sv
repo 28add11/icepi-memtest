@@ -47,7 +47,7 @@ module top #(
 	);
 
 	// Control logic and the actual SRAM module
-	wire [23:0] testAddr = testCount[23:0];
+	wire [23:0] testAddr = testCount;
 	wire [15:0] testData;
 	reg [15:0] expectedTestData;
 	wire [15:0] testDataReturned;
@@ -56,7 +56,7 @@ module top #(
 	reg [1:0] state;
 	wire startTransaction;
 	reg testGood;
-	reg [29:0] testCount;
+	reg [23:0] testCount;
 
 	assign led[0] = testGood;
 	assign led[4:1] = testCount[23:20];
